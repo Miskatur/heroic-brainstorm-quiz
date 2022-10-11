@@ -7,15 +7,19 @@ const Option = ({ option, correctAnswer }) => {
 
     const handleAnswer = () => {
         if (option === correctAnswer) {
-            toast.success("You have Completed your Todays task", { position: toast.POSITION.TOP_CENTER })
+            toast.success("Bravo! You choose the correct Answer.", { position: toast.POSITION.TOP_CENTER })
+
         }
         else {
-            toast.danger("You have Completed your Todays task", { position: toast.POSITION.TOP_CENTER })
+            toast.error("Oops! You chosed the wrong Answer", { position: toast.POSITION.TOP_CENTER })
+
         }
     }
 
+
     return (
         <div>
+
             <div className="form-check">
                 <input className="form-check-input" type="radio" name="flexRadio" id="flexRadioDefault1" onClick={handleAnswer} />
                 <label className="form-check-label" htmlFor="flexRadioDefault1" >

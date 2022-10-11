@@ -76,17 +76,16 @@ const Blog = () => {
                         <Accordion.Body>
                             <p>
                                 7 Ways to Implement Conditional Rendering in React Applications:
-                                <ol>
-                                    <li>Using an if…else Statement</li>
-                                    <li>Using a switch Statement</li>
-                                    <li>Using Element Variables</li>
-                                    <li>Using Ternary Operators</li>
-                                    <li>Using Logical && (Short Circuit Evaluation)</li>
-                                    <li>Using Immediately Invoked Function Expressions </li>
-                                    <li>Using Enhanced JSX Libraries</li>
-                                </ol>
-
                             </p>
+                            <ol>
+                                <li>Using an if…else Statement</li>
+                                <li>Using a switch Statement</li>
+                                <li>Using Element Variables</li>
+                                <li>Using Ternary Operators</li>
+                                <li>Using Logical && (Short Circuit Evaluation)</li>
+                                <li>Using Immediately Invoked Function Expressions </li>
+                                <li>Using Enhanced JSX Libraries</li>
+                            </ol>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
