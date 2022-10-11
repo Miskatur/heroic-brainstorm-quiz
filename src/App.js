@@ -7,6 +7,7 @@ import Stats from './component/Stats/Stats';
 import Error from './Error/Error';
 import Main from './layout/Main/Main';
 
+
 function App() {
   const router = createBrowserRouter([
     {

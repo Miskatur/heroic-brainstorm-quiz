@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Option from '../Option/Option';
-import { Col, Row, Toast } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import { Col, Row, Toast } from 'react-bootstrap';
 
 
 const Question = ({ questions }) => {
@@ -10,43 +12,31 @@ const Question = ({ questions }) => {
     const questionString = question.replace(/(<([^>]+)>)/ig, '');
     const individualQuestion = questionString.replaceAll('&nbsp;', ' ');
 
-    const [show, setShow] = useState(false)
+    // const [show, setShow] = useState(false)
 
-    console.log(question)
+    // console.log(question)
+    // }
+    const showAnswer = () => {
+        toast.info(`The Correct Answer is : ${correctAnswer}`,
+            { position: toast.POSITION.TOP_CENTER }, { autoClose: 3000 })
+    }
+
     return (
         <div className='container mx-5 my-5'>
-            {/* Toast  */}
-            <Row>
-                <Col xs={6}>
-                    <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
-                        <Toast.Header>
-                            <img
-                                src="holder.js/20x20?text=%20"
-                                className="rounded me-auto"
-                                alt=""
-                            />
-                            <strong className="me-auto">Correct Answer</strong>
-
-                        </Toast.Header>
-                        <Toast.Body>{correctAnswer}</Toast.Body>
-                    </Toast>
-                </Col>
-                <Col xs={6}></Col>
-            </Row>
-            {/* Toast  */}
-
-
             <div className='border  p-5'>
                 <div className='d-flex justify-content-between align-items-center'>
                     <h3 className='text-center me-5'> {individualQuestion}</h3>
-                    <p onClick={() => setShow(true)}><FontAwesomeIcon icon={faEye} /> </p>
+                    <p onClick={showAnswer}><FontAwesomeIcon icon={faEye} /> </p>
+
                 </div>
+                <ToastContainer />
 
                 <div className='my-4'>
                     {
                         options.map((option, index) => <Option
                             key={index}
                             option={option}
+                            correctAnswer={correctAnswer}
                         ></Option>)
                     }
                 </div>
@@ -54,5 +44,6 @@ const Question = ({ questions }) => {
         </div>
     );
 };
+
 
 export default Question;
