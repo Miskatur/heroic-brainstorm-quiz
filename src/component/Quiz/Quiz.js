@@ -5,16 +5,20 @@ import Question from '../Question/Question';
 const Quiz = () => {
     const quizLoadedData = useLoaderData();
     const quizData = quizLoadedData.data.questions;
+    const name = quizLoadedData.data.name
     return (
         <div>
-            {
-                quizData.map(question => <Question
-                    key={question.id}
-                    question={question}
-                >
+            <h2 className='text-center my-5'>This quiz is about <strong>{name}</strong></h2>
+            <div>
+                {
+                    quizData.map(question => <Question
+                        key={question.id}
+                        questions={question}
+                    >
 
-                </Question>)
-            }
+                    </Question>)
+                }
+            </div>
         </div>
     );
 };
