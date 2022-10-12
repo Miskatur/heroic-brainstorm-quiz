@@ -11,7 +11,7 @@ const Quiz = () => {
             <h2 className='text-center my-5'>This quiz is about <strong>{name}</strong></h2>
             <div>
                 {
-                    quizData.map(question => <Question
+                    quizData.map((question) => <Question
                         key={question.id}
                         questions={question}
                     >
